@@ -37,3 +37,13 @@ let object6= new car("lamborgini")
 let object7= new (function (){
     this.name="biki"
 })()
+
+
+// prototype chaining
+
+/*
+prototype chaining is used to build new type of objects based one existing ones,
+similar to inheritence in a class based language 
+
+
+*/
