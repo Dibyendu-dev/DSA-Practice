@@ -36,3 +36,46 @@ console.log(salad === newSalad);
 
    
 }
+
+// How to Remove Elements from an Array in JS
+{
+  const salad = ['🍅', '🍄', '🥦', '🥒', '🌽', '🥕', '🥑']
+  salad.pop();
+  console.log(salad)
+}
+
+// How to Copy and Clone an Array in JS
+{
+  const salad = ['🍅', '🍄', '🥦', '🥒', '🌽', '🥕', '🥑'];
+  const newSalad = salad.slice();
+  console.log(newSalad);
+  console.log(salad);
+  console.log(salad===newSalad)
+}
+
+// How to Determine if a Value is an Array in JS
+{
+  const salad =['🍅', '🍄', '🥦', '🥒', '🌽', '🥕', '🥑']
+  console.log(Array.isArray(salad));
+  console.log(Array.isArray({username:"biki",loc:"wb"}));
+  console.log(Array.isArray([]))
+}
+
+ // Array Destructuring
+{
+  
+
+  let vegetables = ['🍅', '🍄', '🥕'];
+  let tomato = vegetables[0];
+  let mushroom = vegetables[1];
+  let carrot = vegetables[2];
+  console.log(`${tomato},${mushroom},${carrot}`);
+  
+
+}
+
+{
+  let [tomato,mushroom,carrot] = ['🍅', '🍄', '🥕'];
+  console.log(tomato,mushroom,carrot);
+}
+
