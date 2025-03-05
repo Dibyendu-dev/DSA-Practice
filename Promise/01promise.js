@@ -81,5 +81,3 @@ async function consumePromiseFive() {
     console.log(error);
   }
 }
-
-consumePromiseFive()
