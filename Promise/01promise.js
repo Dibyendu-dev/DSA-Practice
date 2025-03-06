@@ -61,7 +61,7 @@
 
 const promiseFive = new Promise(function (resolve, reject) {
   setTimeout(function () {
-    let error = true;
+    let error = false;
     if (!error) {
       resolve({
         username: "Dibyendu-dev",
@@ -81,3 +81,26 @@ async function consumePromiseFive() {
     console.log(error);
   }
 }
+
+const redPromise = new Promise((resolve,reject)=>{
+  setTimeout(()=>{
+    resolve(console.log("red promise resolved"))
+  },1000)
+})
+
+const bluePromise = new Promise((resolve,reject)=>{
+  setTimeout(()=>{
+    resolve(console.log("blue promise resolved"))
+  },3000)
+})
+
+const yellowPromise = new Promise((resolve,reject)=>{
+  setTimeout(()=>{
+    resolve(console.log("yellow promise resolved"))
+  },5000)
+})
+
+const allPromise = Promise.all([redPromise,bluePromise,yellowPromise])
+ allPromise.then((v)=>{
+    console.log(v);
+ })
