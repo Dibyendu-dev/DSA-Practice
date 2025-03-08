@@ -62,17 +62,39 @@
 // console.log('2'==2)
 // console.log('2'===2)
 
-const website =new String("ddas-dot-com")
-console.log(website[0]);
-console.log(website.__proto__)
-console.log(website.length);
-console.log(website.toUpperCase());
+// const website =new String("ddas-dot-com")
+// console.log(website[0]);
+// console.log(website.__proto__)
+// console.log(website.length);
+// console.log(website.toUpperCase());
 
-console.log(website.charAt(4));
-console.log(website.indexOf("d"));
+// console.log(website.charAt(4));
+// console.log(website.indexOf("d"));
 
-const newString = website.substring(0,4);
-console.log(newString);
+// const newString = website.substring(0,4);
+// console.log(newString);
 
-const anotrherString = website.slice(12,4);
-console.log(anotrherString);
+// const anotrherString = website.slice(12,4);
+// console.log(anotrherString);
+
+// const newName = "        ddas     d";
+// console.log(newName);
+// console.log(newName.trim());
+
+// const balance = new Number(100);
+// console.log(balance);
+// console.log(balance.toString().length)
+// console.log(typeof balance);
+// const money=1000;
+// console.log(money);
+// console.log(typeof money)
+
+// const names = new String("dibyendu");
+// console.log(names)
+// console.log(typeof names)
+
+// const bankBalance = 123.8966
+// console.log(bankBalance.toPrecision(4));
+
+const ta =1001001010000000
+console.log(ta.toLocaleString('en-IN'))

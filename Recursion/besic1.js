@@ -1,5 +1,6 @@
 
-   function  printNos(n) {
+   function  printNos(n) 
+   {
        let result = [];
        function helper (current){
         if(current > n) return
