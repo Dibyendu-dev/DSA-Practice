@@ -96,5 +96,15 @@
 // const bankBalance = 123.8966
 // console.log(bankBalance.toPrecision(4));
 
-const ta =1001001010000000
-console.log(ta.toLocaleString('en-IN'))
+// const ta =1001001010000000
+// console.log(ta.toLocaleString('en-IN'))
+
+let a=10;
+let b= a++;
+console.log(a);
+console.log(b);
+
+let c=5;
+let d=++c;
+console.log(c);
+console.log(d);
