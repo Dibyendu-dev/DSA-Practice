@@ -1,3 +1,4 @@
+// insertion sort
 const arr = [5,7,9,2,6,4,8,3,1];
 let n = arr.length;
 
