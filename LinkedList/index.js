@@ -8,51 +8,107 @@ class Node {
 class LinkedList {
   constructor() {
     this.head = null;
+    this.size = 0;
   }
+
+  isEmpty() {
+    return this.size === 0;
+  }
+
+  getSize() {
+    console.log(this.size);
+  }
+
   insertAtFirst(data) {
     let newNode = new Node(data);
-    newNode.next = this.head;
-    this.head = newNode;
+    if (this.isEmpty()) {
+      this.head = newNode;
+    } else {
+      newNode.next = this.head;
+      this.head = newNode;
+    }
+    this.size++;
   }
 
-  insertAtLast(data){
+  insertAtLast(data) {
     let newNode = new Node(data);
-    if(this.head == null){
-        this.head=newNode;
+    if (this.isEmpty()) {
+      this.head = newNode;
+    } else {
+      let current = this.head;
+      while (current.next) {
+        current = current.next;
+      }
+      current.next = newNode;
     }
-    let current = this.head;
-    while(current.next){
-        current=current.next
-    }
-    current.next=newNode;
+    this.size++;
   }
 
-  deleteNode(value){
-    if(!this.head) return
+  insertAt(data, index) {
+    if (index < 0 || index > this.size) return;
+    if (index === 0) {
+      this.insertAtFirst(data);
+    } else {
+      let newNode = new Node(data);
+      let current = this.head;
+      for (let i = 0; i < index - 1; i++) {
+        current = current.next;
+      }
+      newNode.next = current.next;
+      current.next = newNode;
+      this.size++;
+    }
+  }
 
-    if(this.head.data === value){
-        this.head=this.head.next;
-        return
+  deleteAt(index) {
+    if (index < 0 || index >= this.size) {
+      return null;
+    }
+    let removeNode;
+    if (index === 0) {
+      removeNode = this.head;
+      this.head = this.head.next;
+    } else {
+      let current = this.head;
+      for (let i = 0; i < index - 1; i++) {
+        current = current.next;
+      }
+      removeNode = current.next;
+      current.next = removeNode.next;
+    }
+    this.size--;
+    return removeNode.data;
+  }
+
+  deleteNode(value) {
+    if (!this.head) return;
+
+    if (this.head.data === value) {
+      this.head = this.head.next;
+      return;
     }
 
     let current = this.head;
-    while(current.next && current.next.data !== value){
-        current=current.next
+    while (current.next && current.next.data !== value) {
+      current = current.next;
     }
-    if(current.next){
-        current.next= current.next.next;
+    if (current.next) {
+      current.next = current.next.next;
     }
-
   }
 
   printList() {
-    let current = this.head;
-    let list = "";
-    while (current) {
-      list = list + current.data + " -> ";
-      current = current.next;
+    if (this.isEmpty()) {
+      console.log("List is empty");
+    } else {
+      let current = this.head;
+      let list = "";
+      while (current) {
+        list = list + current.data + " -> ";
+        current = current.next;
+      }
+      console.log(list + "null");
     }
-    console.log(list + "null");
   }
 }
 
@@ -67,15 +123,10 @@ myLList.insertAtLast(4);
 myLList.insertAtLast(52);
 myLList.insertAtLast(0);
 
-
-myLList.printList();
-myLList.deleteNode(17);
-myLList.printList();
-myLList.deleteNode(5);
 myLList.printList();
 
+myLList.printList();
 
-
-
-
-
+myLList.printList();
+myLList.getSize();
+console.log("Deleting element at index 7:", myLList.deleteAt(7));
