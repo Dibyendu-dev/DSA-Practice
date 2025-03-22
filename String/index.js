@@ -40,16 +40,33 @@ let names = "naman";
 // isPalindrome ? console.log("palindrome") : console.log("not palindrome");
 
 //toggle a string
-let s = "DasDibyendu"
-console.log(s);
-let toggle="";
-for(let i=0;i<=s.length-1;i++){
-  
+// let s = "DasDibyendu"
+// console.log(s);
+// let toggle="";
+// for(let i=0;i<=s.length-1;i++){
 
-  if(s.charCodeAt(i)>=65 && s.charCodeAt(i)<=90){
-    toggle=toggle+ String.fromCharCode(s.charCodeAt(i)+32)
-  }else if (s.charCodeAt(i)>=97 && s.charCodeAt(i)<=122){
-    toggle=toggle+ String.fromCharCode(s.charCodeAt(i)-32)
+//   if(s.charCodeAt(i)>=65 && s.charCodeAt(i)<=90){
+//     toggle=toggle+ String.fromCharCode(s.charCodeAt(i)+32)
+//   }else if (s.charCodeAt(i)>=97 && s.charCodeAt(i)<=122){
+//     toggle=toggle+ String.fromCharCode(s.charCodeAt(i)-32)
+//   }
+// }
+// console.log(toggle)
+
+// frequency of a char in a string
+
+let s = "dibYendu";
+let arr = new Array(128).fill(0);
+
+for (let i = 0; i < s.length; i++) {
+  let index = s.charCodeAt(i);
+  arr[index] = arr[index] + 1;
+}
+
+for (let i = 0; i < s.length; i++) {
+  let index = s.charCodeAt(i);
+  if (arr[index] > 0) {
+    console.log(s[i] + " appears " + arr[index] + " times");
+    arr[index] = 0; // Reset to avoid duplicate printing
   }
 }
-console.log(toggle)
