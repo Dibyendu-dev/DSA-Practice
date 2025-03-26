@@ -6,9 +6,9 @@ if (isNaN(num)) {
 } else if (num <= 0) {
   console.log("sorry! pls enter a positive number");
 } else {
-  for (i = 1; i < Math.floor(num); i++) {
+  for (let i = 1; i <= num; i++) {
     if (num % i === 0) {
-      console.log("factot of " + num + " is " + i);
+      console.log("factor of " + num + " is " + i);
     }
   }
 }

@@ -7,8 +7,8 @@ if (isNaN(num)) {
   console.log("sorry! pls enter a positive number");
 } else {
   let sum = 0;
-  for (i = 1; i < num; i++) {
-    sum = sum + num;
+  for (let i = 1; i <= num; i++) {
+    sum = sum + i;
   }
   console.log(sum);
 }
